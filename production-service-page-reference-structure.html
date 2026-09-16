@@ -1,0 +1,626 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');#loki-page{--ink:#f5f5f5;--muted:#b0b0b0;--accent:#fb6a46;--line:#333333;--paper:#14141f}#loki-page *{box-sizing:border-box}#loki-page{scroll-behavior:smooth;scroll-padding-top:100px}#loki-page{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Manrope,Arial,sans-serif}#loki-page a{color:inherit}#loki-page button{font:inherit;cursor:pointer}#loki-page a,#loki-page button,#loki-page summary{-webkit-tap-highlight-color:transparent}#loki-page a:focus-visible,#loki-page button:focus-visible,#loki-page summary:focus-visible,#loki-page [tabindex]:focus-visible{outline:3px solid #fb6a46;outline-offset:5px}#loki-page h1,#loki-page h2,#loki-page h3,#loki-page h4,#loki-page p{margin:0}#loki-page p+p{margin-top:1em}#loki-page h1,#loki-page h2,#loki-page h3,#loki-page h4{line-height:1.1;letter-spacing:-.045em}#loki-page h2{font-size:clamp(38px,5vw,70px);font-weight:600}#loki-page h3{font-weight:600}#loki-page .wrap{width:min(1320px,90%);margin:auto}#loki-page .skip{position:fixed;top:-80px;background:var(--accent);padding:12px;z-index:100}#loki-page .skip:focus{top:0}#loki-page nav{position:sticky;top:0;z-index:20;background:#14141ff2;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}#loki-page nav>.wrap{display:flex;align-items:center;justify-content:space-between;gap:25px;min-height:94px}#loki-page .logo img{width:108px;display:block}#loki-page .navlinks{display:flex;gap:25px;list-style:none;margin:0;padding:0;font-size:14px}#loki-page .navlinks a{text-decoration:none}#loki-page .navlinks a:hover{border-bottom:1px solid}#loki-page .active{font-weight:800}#loki-page .dropdown-menu{display:none;position:absolute;background:var(--paper);padding:22px 28px;list-style:none;box-shadow:0 12px 25px #f5f5f520;min-width:240px}#loki-page .dropdown-menu li+li{margin-top:12px}#loki-page .has-dropdown:hover .dropdown-menu,#loki-page .has-dropdown:focus-within .dropdown-menu{display:block}#loki-page .region-switch{display:flex;gap:9px;font-size:14px}#loki-page .region-switch .on{font-weight:800}#loki-page .navcta,#loki-page .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:50px;padding:14px 25px;font-size:14px;font-weight:700;transition:transform .2s,background .2s}#loki-page .navcta{background:var(--ink);color:white}#loki-page .navcta:hover,#loki-page .btn:hover{transform:translateY(-3px)}#loki-page .menu-toggle{display:none}#loki-page .hero{padding:52px 0 75px;overflow:hidden}#loki-page .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:start;position:relative}#loki-page .badge{text-transform:uppercase;font-size:13px;letter-spacing:.14em;display:block;margin-bottom:25px}#loki-page .hero h1{font-size:clamp(64px,7.8vw,112px);font-weight:600;line-height:1;position:relative;z-index:2}#loki-page .hero h1>span{display:block}#loki-page .hero h1 .hero-kicker{font-size:20px;line-height:1.45;letter-spacing:-.025em;max-width:330px;margin-bottom:26px}#loki-page .hero h1 i{font-family:Georgia,serif;font-weight:400}#loki-page .growth{color:#fb6a46}#loki-page .growth span{display:inline-block;font-size:.8em;animation:nudge 4s ease-in-out infinite}#loki-page .sub{margin-top:40px;max-width:620px;color:var(--muted);font-size:16px}#loki-page .sub strong{color:var(--ink)}#loki-page .cta-row{display:flex;gap:12px;margin-top:27px;flex-wrap:wrap}#loki-page .btn-primary{background:var(--accent);color:var(--ink)}#loki-page .btn-secondary{border:1px solid var(--ink)}#loki-page .hero-visual{margin-top:60px;height:660px;overflow:hidden;border-radius:220px 220px 8px 8px;transform:rotate(3deg);background:#222222}#loki-page .hero-visual img{width:100%;height:100%;object-fit:cover;transform:scale(1.07) rotate(-3deg);transition:transform 1s}#loki-page .hero-visual:hover img{transform:scale(1.12) rotate(-3deg)}#loki-page section{padding:100px 0}#loki-page .intro{border-top:1px solid var(--line)}#loki-page .intro-copy{display:grid;grid-template-columns:1fr 1fr;gap:28px 70px}#loki-page .intro-copy p:first-child{font-size:28px;line-height:1.45;grid-row:span 2;letter-spacing:-.03em}#loki-page .intro-copy p{margin:0;color:var(--muted)}#loki-page .intro-copy .intro-lede{font-size:34px;line-height:1.2;color:var(--ink);font-weight:600}#loki-page .journey{background:var(--ink);color:var(--paper);overflow:hidden}#loki-page .journey h2{font-size:16px;letter-spacing:.14em}#loki-page .journey-rule{height:1px;background:#ffffff35;margin:24px 0 45px}#loki-page .journey-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:28px}#loki-page .journey-stat strong{display:block;color:var(--accent);font-size:clamp(42px,5.5vw,76px);font-weight:500;line-height:1.2;letter-spacing:-.06em;font-variant-numeric:tabular-nums}#loki-page .journey-stat span{font-size:13px;letter-spacing:.05em}#loki-page .timeline-controls{display:flex;justify-content:flex-end;gap:8px;margin:40px 0 20px}#loki-page .timeline-controls button{border:1px solid #ffffff65;background:transparent;color:white;border-radius:50%;width:48px;height:48px}#loki-page .timeline-controls button:hover{background:var(--accent);color:var(--ink)}#loki-page .timeline-scroll{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-color:var(--accent) var(--ink);padding-bottom:20px}#loki-page .timeline{display:flex;width:max-content;gap:45px}#loki-page .timeline-item{width:260px;scroll-snap-align:start;border-top:1px solid #ffffff50;padding-top:24px}#loki-page .timeline-item h3{font-size:36px;color:var(--accent);margin-bottom:16px}#loki-page .timeline-item p{color:#cccccc;font-size:15px}#loki-page .section-head{max-width:820px;margin-bottom:48px}#loki-page .section-head p{max-width:650px;color:var(--muted);margin-top:24px}#loki-page .services{background:#141414}#loki-page .service{border-top:1px solid #aeb9ae}#loki-page .service:last-child{border-bottom:1px solid #aeb9ae}#loki-page summary{cursor:pointer;list-style:none}#loki-page summary::-webkit-details-marker{display:none}#loki-page .service>summary{display:grid;grid-template-columns:60px 1fr 45px;align-items:center;padding:28px 0;gap:18px}#loki-page .service>summary h3{font-size:clamp(25px,3.4vw,46px)}#loki-page .service-number{font-size:14px;align-self:start;padding-top:5px}#loki-page .service>summary:after{content:'+';font-size:35px;font-weight:400;text-align:center}#loki-page .service[open]>summary:after{content:'−'}#loki-page .service[open]>summary{color:#fb6a46}#loki-page .svc-row{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding:8px 0 40px 78px;animation:appear .35s ease}#loki-page .svc-desc,#loki-page .svc-why{color:var(--muted);margin-bottom:20px}#loki-page .svc-why{border-left:2px solid #fb6a46;padding-left:20px}#loki-page .svc-linkline{font-size:14px;font-weight:700;text-underline-offset:5px}#loki-page .svc-bullets{list-style:none;margin:0;padding:0}#loki-page .svc-bullets li{padding:8px 0;border-bottom:1px solid #333333}#loki-page .process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0}#loki-page .pstep{padding:24px 20px;border-top:1px solid var(--ink);border-right:1px solid var(--line);transition:background .25s,transform .25s}#loki-page .pstep:hover{background:var(--accent);transform:translateY(-8px)}#loki-page .pstep .n{font-size:52px;font-weight:500;margin-bottom:45px}#loki-page .pstep h4{font-size:22px;margin-bottom:16px}#loki-page .pstep p{font-size:15px;color:var(--muted)}#loki-page .clients{background:white;border-top:1px solid var(--line)}#loki-page .client-wall img{width:100%;height:auto;display:block}#loki-page .faq{background:#141414}#loki-page .faq>.wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px}#loki-page .faq details{border-bottom:1px solid var(--line);padding:24px 0}#loki-page .faq summary{display:flex;justify-content:space-between;gap:25px;font-weight:600;font-size:18px;line-height:1.4}#loki-page .faq summary:after{content:'+'}#loki-page .faq details[open] summary:after{content:'−'}#loki-page .faq details p{margin-top:18px;color:var(--muted)}#loki-page #contact{background:var(--accent);padding:100px 5%}#loki-page .closing{max-width:1120px;margin:auto;position:relative}#loki-page .closing h2{max-width:1000px;font-size:clamp(44px,6.5vw,86px)}#loki-page .closing p{max-width:640px;margin-top:30px}#loki-page .closing .btn{margin-top:30px;background:var(--ink);color:white;min-width:170px}#loki-page footer{padding:30px 0;background:var(--ink);color:white;font-size:14px}#loki-page .reveal{transition:opacity .6s,transform .6s}#loki-page .reveal:not(.seen){opacity:.15;transform:translateY(18px)}@keyframes nudge{50%{transform:translate(8px,-8px)}}@keyframes appear{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}@media(min-width:1500px){#loki-page .hero-visual{height:720px}}@media(max-width:1050px){#loki-page .navlinks{gap:14px}#loki-page nav>.wrap{gap:15px}#loki-page .region-switch{display:none}#loki-page .hero h1{font-size:76px}#loki-page .hero-visual{height:570px}#loki-page .hero-grid{gap:28px}#loki-page .process-steps{grid-template-columns:repeat(3,1fr)}#loki-page .pstep{border-bottom:1px solid var(--line)}}@media(max-width:800px){#loki-page nav>.wrap{min-height:76px}#loki-page .logo img{width:85px}#loki-page .menu-toggle{display:block;border:0;background:transparent;margin-left:auto}#loki-page .navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:var(--paper);padding:25px 5%;box-shadow:0 15px 20px #0001}#loki-page .navlinks.is-open{display:grid;gap:20px}#loki-page .dropdown-menu{display:none!important}#loki-page .navcta{padding:11px 16px}#loki-page .hero{padding-top:32px}#loki-page .hero-grid{grid-template-columns:1fr}#loki-page .hero h1{font-size:clamp(60px,12vw,95px)}#loki-page .hero h1 .hero-kicker{font-size:18px}#loki-page .hero-visual{margin-top:12px;height:440px;border-radius:150px 150px 5px 5px;max-width:550px;width:94%;justify-self:center}#loki-page .sub{margin-top:28px}#loki-page .intro-copy{grid-template-columns:1fr;gap:26px}#loki-page .intro-copy p:first-child{grid-row:auto}#loki-page .journey-stats{grid-template-columns:repeat(3,1fr);gap:28px 20px}#loki-page section{padding:65px 0}#loki-page .section-head{margin-bottom:32px}#loki-page .svc-row{grid-template-columns:1fr;padding-left:0;gap:25px}#loki-page .service>summary{grid-template-columns:28px 1fr 30px;gap:12px}#loki-page .service-number{padding-top:0}#loki-page .faq>.wrap{grid-template-columns:1fr;gap:0}#loki-page .process-steps{grid-template-columns:repeat(2,1fr)}#loki-page .pstep .n{margin-bottom:22px}#loki-page .pstep:last-child{grid-column:1/-1}#loki-page .closing h2{font-size:48px}#loki-page .timeline-item{width:245px}}@media(prefers-reduced-motion:reduce){#loki-page{scroll-behavior:auto}#loki-page *,#loki-page *:before,#loki-page *:after{animation:none!important;transition:none!important}#loki-page .reveal:not(.seen){opacity:1;transform:none}}#loki-page{color-scheme:dark;--ink:#f5f5f5;--muted:#b0b0b0;--accent:#fb6a46;--line:#333333;--paper:#14141f}#loki-page{background:var(--paper)}#loki-page nav{background:#14141fed}#loki-page .logo img{filter:invert(1)}#loki-page .navcta{background:var(--accent);color:#14141f}#loki-page .hero .growth{color:var(--accent)}#loki-page .hero-visual{background:#222222}#loki-page .btn-primary{color:#14141f}#loki-page .btn-secondary{border-color:#777777}#loki-page .journey{background:#111111;color:#f5f5f5}#loki-page .timeline-controls button:hover{color:#14141f}#loki-page .timeline-scroll{scrollbar-color:var(--accent) #111111}#loki-page .services{background:#0d0d0d}#loki-page .service,#loki-page .service:last-child{border-color:#383838}#loki-page .service[open]>summary{color:var(--accent)}#loki-page .svc-bullets li{border-color:#333333}#loki-page .svc-why{border-color:#fb6a46}#loki-page .pstep:hover{color:#14141f}#loki-page .pstep:hover p{color:#252525}#loki-page .clients{background:#14141f}#loki-page .client-wall{background:#fff;border-radius:6px;padding:25px}#loki-page .faq{background:#141414}#loki-page .closing,#loki-page .closing h2,#loki-page .closing p{color:#14141f}#loki-page .closing .btn{background:#14141f;color:#f5f5f5}#loki-page footer{background:#14141f;color:#b0b0b0}#loki-page .skip{color:#14141f}#loki-page a:focus-visible,#loki-page button:focus-visible,#loki-page summary:focus-visible,#loki-page [tabindex]:focus-visible{outline-color:#fb6a46}#loki-page .dropdown-menu{box-shadow:0 12px 25px #0005}@media(max-width:800px){#loki-page .client-wall{padding:8px}}
+
+#loki-page{font:16px/1.65 Manrope,Arial,sans-serif;color:var(--ink);background:var(--paper);width:100%;isolation:isolate}#loki-page h1,#loki-page h2,#loki-page h3,#loki-page h4{font-family:Manrope,Arial,sans-serif}#loki-page .reveal:not(.seen){opacity:1;transform:none}
+
+/* Integrated grid, service pills, ticker, and scroll motion. */
+#loki-page{--ink:#f5f5f5;--muted:#b0b0b0;--accent:#fb6a46;--line:#333;--paper:#14141f}
+#loki-page .hero{position:relative;background-image:linear-gradient(90deg,#ffffff0b 1px,transparent 1px),linear-gradient(#ffffff0b 1px,transparent 1px);background-size:calc(90% / 6) 64px;background-position:5% 0}
+#loki-page .hero:before{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(transparent 35%,#14141f)}
+#loki-page .hero-grid{position:relative;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+#loki-page .hero h1>span:not(.hero-kicker){animation:loki-rise .85s cubic-bezier(.2,.8,.2,1) both}
+#loki-page .hero h1>span:nth-child(3){animation-delay:.12s}
+#loki-page .hero h1>span:nth-child(4){animation-delay:.24s}
+#loki-page .marquee-band{background:var(--accent);color:#14141f;overflow:hidden;padding:12px 0 20px;border-block:1px solid #14141f}
+#loki-page .marquee-toolbar{width:90%;margin:0 auto 10px;text-align:right}
+#loki-page .ticker-toggle{font:600 13px Manrope,Arial,sans-serif;border:1px solid #14141f66;border-radius:30px;padding:4px 12px;color:#14141f;background:transparent}
+#loki-page .marquee-track{display:flex;width:max-content;animation:loki-ticker 38s linear infinite}
+#loki-page .marquee-group{display:flex;flex-shrink:0}
+#loki-page .marquee-group span{font-size:16px;font-weight:700;letter-spacing:.025em;text-transform:uppercase;padding-inline:28px;white-space:nowrap;display:flex;align-items:center;gap:28px}
+#loki-page .marquee-group span:after{content:'✳';font-size:14px;opacity:.55}
+
+#loki-page .service>summary{grid-template-columns:60px minmax(0,1fr) auto 38px}
+#loki-page .service>summary h3{font-size:clamp(25px,3vw,40px);transition:color .25s,letter-spacing .25s}
+#loki-page .service>summary:hover h3{letter-spacing:-.025em}
+#loki-page .service-tag{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#aaa}
+#loki-page .service>summary:after{border:1px solid #ffffff55;border-radius:50%;width:36px;height:36px;font-size:25px;line-height:32px}
+#loki-page .service[open]>summary:after{background:var(--accent);color:#14141f;border-color:var(--accent)}
+#loki-page .service-copy{padding:0 0 34px 78px;animation:loki-rise .35s ease}
+#loki-page .service-copy>p{color:var(--muted);max-width:65ch;font-size:17px;margin-bottom:22px}
+#loki-page .offerings{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+#loki-page .offerings span{font-family:Manrope,Arial,sans-serif;font-size:14px;line-height:1.5;padding:7px 14px;border:1px solid #ffffff29;border-radius:999px;color:#bcbcbc;transition:border-color .25s,color .25s,background .25s}
+#loki-page .offerings span:hover{border-color:var(--accent);color:#fff;background:#fb6a460c}
+#loki-page .faq>.wrap{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+#loki-page .faq details[open] summary{color:var(--accent)}
+#loki-page .merge-reveal{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+#loki-page .merge-reveal.pre{opacity:0;transform:translateY(28px)}
+@keyframes loki-ticker{to{transform:translateX(-50%)}}
+@keyframes loki-rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media(max-width:800px){#loki-page .hero-grid,#loki-page .faq>.wrap{grid-template-columns:1fr}#loki-page .service>summary{grid-template-columns:28px minmax(0,1fr) 36px}#loki-page .service-tag{display:none}#loki-page .service-copy{padding-left:0}#loki-page .hero h1{font-size:clamp(48px,11.5vw,95px)}#loki-page .offerings span{font-size:14px}#loki-page .marquee-group span{font-size:14px;padding-inline:18px}}
+@media(prefers-reduced-motion:reduce){#loki-page .marquee-track{animation:none;width:auto}#loki-page .marquee-group{flex-wrap:wrap;gap:12px;justify-content:center}#loki-page .marquee-group[aria-hidden]{display:none}#loki-page .marquee-toolbar{display:none}#loki-page .merge-reveal.pre{opacity:1;transform:none}#loki-page .hero h1>span,#loki-page .service-copy{animation:none}}
+
+
+#loki-page .marquee-band{padding:10px 0;border:0}
+#loki-page .marquee-group span{font-size:14px;line-height:1.4;padding-inline:22px;gap:22px}
+
+/* Blog palette */
+#loki-page{--paper:#14141f;--ink:#cac9cf;--muted:#cac9cf;--accent:#fb6a46;--line:#79798655;background:#14141f;color:#cac9cf}
+#loki-page nav{background:#14141ff2}
+#loki-page .hero:before{background:linear-gradient(transparent 35%,#14141f)}
+#loki-page .journey,#loki-page .services,#loki-page .faq,#loki-page .clients,#loki-page footer{background:#14141f}
+#loki-page .hero h1,#loki-page h2{color:#cac9cf}
+#loki-page .hero .growth{color:#fb6a46}
+#loki-page .sub,#loki-page .intro-copy p,#loki-page .section-head p,#loki-page .service-copy>p,#loki-page .faq details p,#loki-page .pstep p,#loki-page .timeline-item p{color:#cac9cf}
+#loki-page .intro-copy .intro-lede{color:#cac9cf}
+#loki-page .service:nth-child(1){--service-color:#fb6a46}
+#loki-page .service:nth-child(2){--service-color:#cc66ff}
+#loki-page .service:nth-child(3){--service-color:#fb6a46}
+#loki-page .service:nth-child(4){--service-color:#fb6a46}
+#loki-page .service:nth-child(5){--service-color:#56cbf0}
+#loki-page .service:nth-child(6){--service-color:#f9de2f}
+#loki-page .service:nth-child(7){--service-color:#9999ff}
+#loki-page .service{border-color:#79798655}
+#loki-page .service>summary,#loki-page .service[open]>summary,#loki-page .service-tag,#loki-page .service-number,#loki-page .service .svc-linkline{color:var(--service-color)}
+#loki-page .service>summary h3{color:var(--service-color)}
+#loki-page .service>summary:after{color:var(--service-color);border-color:var(--service-color)}
+#loki-page .service[open]>summary:after{background:var(--service-color);color:#14141f;border-color:var(--service-color)}
+#loki-page .service .offerings span{color:var(--service-color);border-color:var(--service-color);background:transparent}
+#loki-page .service .offerings span:hover{background:var(--service-color);color:#14141f;border-color:var(--service-color)}
+#loki-page .journey-stat:nth-child(1) strong{color:#fb6a46}
+#loki-page .journey-stat:nth-child(2) strong{color:#5ce0e9}
+#loki-page .journey-stat:nth-child(3) strong{color:#fb6a46}
+#loki-page .journey-stat:nth-child(4) strong{color:#9999ff}
+#loki-page .journey-stat:nth-child(5) strong{color:#f9de2f}
+#loki-page .pstep:nth-child(1):hover{background:#fb6a46}
+#loki-page .pstep:nth-child(2):hover{background:#cc66ff}
+#loki-page .pstep:nth-child(3):hover{background:#7ef056}
+#loki-page .pstep:nth-child(4):hover{background:#56cbf0}
+#loki-page .pstep:nth-child(5):hover{background:#f9de2f}
+#loki-page .pstep:hover,#loki-page .pstep:hover p{color:#14141f}
+#loki-page .closing,#loki-page .closing h2,#loki-page .closing p,#loki-page .navcta,#loki-page .btn-primary,#loki-page .marquee-band{color:#14141f}
+#loki-page .closing .btn{background:#14141f;color:#cac9cf}
+#loki-page .timeline-scroll{scrollbar-color:#797986 #14141f}
+
+</style>
+<style>
+@media (hover: hover) and (pointer: fine) {
+  #loki-page,
+  #loki-page * {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='6' fill='%2384ff90' stroke='%2314141f' stroke-width='1'/%3E%3C/svg%3E") 10 10, auto;
+  }
+  #loki-page a,
+  #loki-page a *,
+  #loki-page button,
+  #loki-page button *,
+  #loki-page summary,
+  #loki-page summary * {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='10' fill='%2384ff90' stroke='%2314141f' stroke-width='1'/%3E%3C/svg%3E") 14 14, pointer;
+  }
+  #loki-page input,
+  #loki-page textarea,
+  #loki-page [contenteditable='true'] {
+    cursor: text;
+  }
+}
+</style>
+<style>#loki-page{--paper:#14141f;--accent:#fb6a46;--ink:#cac9cf;--muted:#cac9cf;--line:#79798655;font-family:Manrope,Arial,sans-serif}
+#loki-page h1,#loki-page h2,#loki-page h3,#loki-page h4{font-family:Manrope,Arial,sans-serif;color:#cac9cf}
+#loki-page .hero{padding:70px 0 85px}
+#loki-page .hero-grid{align-items:center;gap:60px}
+#loki-page .service-eyebrow{color:#fb6a46;font-size:14px;letter-spacing:.1em;text-transform:uppercase;margin:35px 0 15px}
+#loki-page .hero h1{font-size:clamp(66px,8.5vw,120px);letter-spacing:-.06em;color:#fb6a46;line-height:1.1;white-space:nowrap}
+#loki-page .hero h1>span{display:inline-block;font-size:.65em;vertical-align:top;margin:12px 0 0 10px;animation:strategy-arrow 4s ease-in-out infinite}
+#loki-page .hero-visual{height:480px;margin:0;border-radius:190px 190px 8px 8px;transform:rotate(3deg)}
+#loki-page .hero-visual img{width:100%;height:100%;object-fit:cover}
+#loki-page .sub{margin-top:30px;font-size:18px}
+#loki-page .trust{border-bottom:1px solid var(--line);padding:38px 0}
+#loki-page .trust ul{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px;margin:0;padding:0;list-style:none}
+#loki-page .trust li{font-size:14px;line-height:1.6;color:#cac9cf;border-left:1px solid var(--line);padding-left:20px}
+#loki-page .trust strong{display:block;color:#fb6a46;font-size:23px;font-weight:600;margin-bottom:10px;letter-spacing:-.04em}
+#loki-page .intro>.wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:35px 70px;align-items:start}
+#loki-page .intro-lead{grid-column:1/-1;font-size:clamp(22px,2.5vw,33px);line-height:1.55;max-width:1100px;margin-bottom:35px;letter-spacing:-.025em}
+#loki-page .intro h2{grid-column:1;max-width:9ch;font-size:clamp(38px,4.8vw,66px)}
+#loki-page .partner-copy{grid-column:1;font-size:17px;line-height:1.7}
+#loki-page .cap-box{grid-column:2;grid-row:2/span 2;margin:0;padding:30px;border:1px solid #fb6a4660;border-radius:6px;background:#fb6a4605}
+#loki-page .cap-kicker{color:#fb6a46;font-size:14px;margin-bottom:20px}
+#loki-page .cap-box h3{font-size:32px;color:#fb6a46;margin-bottom:25px}
+#loki-page .cap-box ul{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:0}
+#loki-page .cap-box li{border:1px solid #fb6a4660;border-radius:999px;font-size:14px;padding:9px 15px;color:#fb6a46;transition:background .25s,color .25s}
+#loki-page .cap-box li:hover{background:#fb6a46;color:#14141f}
+#loki-page #work{border-block:1px solid var(--line)}
+#loki-page .portfolio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:45px 30px;align-items:start}
+#loki-page .portfolio-item:first-child{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:45px;align-items:center}
+#loki-page .portfolio-thumb{display:block;overflow:hidden;border-radius:6px;background:#202030;aspect-ratio:16/10}
+#loki-page .portfolio-thumb img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+#loki-page .portfolio-thumb:hover img{transform:scale(1.045)}
+#loki-page .portfolio-copy{padding-top:22px}
+#loki-page .portfolio-brand{font-size:14px;color:#cac9cf;margin-bottom:12px}
+#loki-page .portfolio-title{font-size:clamp(27px,3vw,42px);color:#fb6a46;line-height:1.2}
+#loki-page .portfolio-item:first-child .portfolio-title{font-size:clamp(34px,4vw,55px)}
+#loki-page .faq>.wrap{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
+#loki-page .explore-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+#loki-page .explore-card{--card-accent:#cc66ff;display:block;position:relative;padding:30px 25px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-decoration:none;transition:background .25s}
+#loki-page .explore-card:nth-child(2){--card-accent:#fb6a46}#loki-page .explore-card:nth-child(3){--card-accent:#fb6a46}#loki-page .explore-card:nth-child(4){--card-accent:#56cbf0}#loki-page .explore-card:nth-child(5){--card-accent:#f9de2f}#loki-page .explore-card:nth-child(6){--card-accent:#9999ff}
+#loki-page .explore-card:hover{background:#ffffff05}
+#loki-page .explore-card .n{color:var(--card-accent);font-size:14px;margin-bottom:30px}
+#loki-page .explore-card h4{font-size:25px;color:var(--card-accent);margin-bottom:15px;line-height:1.2}
+#loki-page .explore-card p{font-size:16px;line-height:1.6;color:#cac9cf}
+#loki-page .explore-card:after{content:'↗';position:absolute;right:25px;top:25px;color:var(--card-accent);font-size:25px;transition:transform .25s}
+#loki-page .explore-card:hover:after{transform:translate(3px,-3px)}
+#loki-page .closing h2{color:#14141f}
+#loki-page .marquee-band{padding:10px 0;border:0}
+#loki-page .marquee-group span{font-size:14px}
+#loki-page .strategy-reveal{transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+#loki-page .strategy-reveal.pre{opacity:0;transform:translateY(28px)}
+@keyframes strategy-arrow{50%{transform:translate(6px,-6px)}}
+@media(max-width:1000px){#loki-page .hero-grid{gap:30px}#loki-page .hero h1{font-size:76px}#loki-page .intro>.wrap{gap:30px}#loki-page .trust ul{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){#loki-page .hero{padding:40px 0 60px}#loki-page .hero-grid,#loki-page .intro>.wrap,#loki-page .faq>.wrap{grid-template-columns:1fr}#loki-page .hero h1{font-size:clamp(54px,12vw,88px)}#loki-page .hero-visual{height:380px;margin-top:30px}#loki-page .intro h2,#loki-page .partner-copy,#loki-page .cap-box,#loki-page .intro-lead{grid-column:auto;grid-row:auto}#loki-page .intro h2{max-width:none}#loki-page .intro-lead{margin-bottom:15px}#loki-page .portfolio-item:first-child{display:block}#loki-page .explore-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#loki-page .cap-box{padding:24px}}
+@media(max-width:540px){#loki-page .portfolio-grid,#loki-page .explore-grid{grid-template-columns:1fr}#loki-page .portfolio-item:first-child{grid-column:auto}#loki-page .trust ul{gap:25px 16px}#loki-page .trust strong{font-size:21px}#loki-page .trust li{padding-left:12px}#loki-page .hero-visual{height:320px}}
+@media(prefers-reduced-motion:reduce){#loki-page .strategy-reveal.pre{opacity:1;transform:none}#loki-page .hero h1>span{animation:none}}
+</style>
+<style>
+/* Reference case-study strip */
+#loki-page #work .work-heading{max-width:none;display:flex;align-items:end;justify-content:space-between;gap:30px;flex-wrap:wrap}
+#loki-page #work .work-heading h2{max-width:15ch}
+#loki-page #work .sec-num{font-size:14px;color:#cac9cf;letter-spacing:.07em;text-transform:uppercase}
+#loki-page #work .case-scroll{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x proximity;padding:5px 5px 22px;scrollbar-color:#797986 #14141f}
+#loki-page #work .case-card{flex:0 0 min(360px,78vw);position:relative;border-radius:2px;overflow:hidden;aspect-ratio:4/5;scroll-snap-align:start;display:block;text-decoration:none;background:#20202b}
+#loki-page #work .case-card img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(.5) contrast(1.05);transition:filter .4s,transform .5s}
+#loki-page #work .case-card:hover img,#loki-page #work .case-card:focus-visible img{filter:grayscale(0) contrast(1.05);transform:scale(1.04)}
+#loki-page #work .case-card:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(20,20,31,.96));pointer-events:none}
+#loki-page #work .case-copy{position:absolute;left:22px;right:22px;bottom:24px;z-index:2}
+#loki-page #work .case-copy .brand{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:#ffffff;margin-bottom:10px;line-height:1.5}
+#loki-page #work .case-copy h4{font-family:Manrope,Arial,sans-serif;font-size:26px;line-height:1.15;font-weight:700;color:#f5f5f5;text-transform:uppercase;letter-spacing:-.035em}
+#loki-page #work .case-more{flex:0 0 240px;scroll-snap-align:start;border:1px solid #79798655;border-radius:2px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:22px;padding:28px;text-decoration:none;transition:border-color .3s}
+#loki-page #work .case-more>span{font-size:20px;color:#cac9cf;text-transform:uppercase;letter-spacing:.04em;line-height:1.5}
+#loki-page #work .case-more .arrow{width:42px;height:42px;border-radius:50%;border:1px solid #797986;display:flex;align-items:center;justify-content:center;transition:background .3s,color .3s}
+#loki-page #work .case-more:hover,#loki-page #work .case-more:focus-visible{border-color:#fb6a46}
+#loki-page #work .case-more:hover .arrow,#loki-page #work .case-more:focus-visible .arrow{background:#fb6a46;color:#14141f;border-color:#fb6a46}
+#loki-page #work .case-more svg{width:18px;height:18px}
+@media(prefers-reduced-motion:reduce){#loki-page #work .case-card img{transition:none}}
+</style>
+<style>
+/* Photo-free hero and full-width service directory */
+#loki-page .hero-grid{display:block}
+#loki-page .hero-grid>div{max-width:none}
+#loki-page .hero{padding:65px 0 75px}
+#loki-page .hero h1{font-size:clamp(80px,13vw,180px);line-height:1.05;white-space:normal;letter-spacing:-.065em}
+#loki-page .hero .sub{max-width:850px;font-size:clamp(17px,1.8vw,22px);line-height:1.65;margin-top:32px}
+#loki-page .hero .cta-row{margin-top:30px}
+#loki-page #explore .section-head{max-width:100%;display:flex;align-items:end;justify-content:space-between;gap:25px;flex-wrap:wrap}
+#loki-page #explore .sec-num{font-size:14px;letter-spacing:.12em;color:#cac9cf}
+#loki-page .explore-list{border-top:1px solid #79798655}
+#loki-page .explore-row{--row-color:#cc66ff;display:grid;grid-template-columns:60px minmax(0,1fr) 52px;align-items:center;gap:25px;padding:32px 0;border-bottom:1px solid #79798655;text-decoration:none;transition:padding .3s,background .3s}
+#loki-page .explore-row:nth-child(2){--row-color:#fb6a46}
+#loki-page .explore-row:nth-child(3){--row-color:#fb6a46}
+#loki-page .explore-row:nth-child(4){--row-color:#56cbf0}
+#loki-page .explore-row:nth-child(5){--row-color:#f9de2f}
+#loki-page .explore-row:nth-child(6){--row-color:#9999ff}
+#loki-page .explore-row .n{color:var(--row-color);font-size:15px;align-self:start;padding-top:10px}
+#loki-page .explore-row h4{font-family:Manrope,Arial,sans-serif;color:var(--row-color);font-size:clamp(28px,4.1vw,57px);font-weight:600;letter-spacing:-.04em;line-height:1.15;margin:0 0 12px}
+#loki-page .explore-row p{color:#cac9cf;font-size:16px;max-width:65ch;line-height:1.6;margin:0}
+#loki-page .explore-row .arrow{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border:1px solid var(--row-color);border-radius:50%;color:var(--row-color);transition:transform .3s,background .3s,color .3s}
+#loki-page .explore-row .arrow svg{width:20px;height:20px}
+#loki-page .explore-row:hover,#loki-page .explore-row:focus-visible{padding-left:12px;padding-right:12px;background:#ffffff03}
+#loki-page .explore-row:hover .arrow,#loki-page .explore-row:focus-visible .arrow{transform:translate(3px,-3px);background:var(--row-color);color:#14141f}
+@media(max-width:800px){#loki-page .hero{padding:40px 0 55px}#loki-page .hero h1{font-size:clamp(66px,15vw,115px)}#loki-page .explore-row{grid-template-columns:28px minmax(0,1fr) 34px;gap:12px;padding:26px 0}#loki-page .explore-row h4{font-size:clamp(25px,5.6vw,40px)}#loki-page .explore-row .arrow{width:32px;height:32px}#loki-page .explore-row .arrow svg{width:16px;height:16px}#loki-page .explore-row p{font-size:15px}#loki-page .explore-row:hover{padding-left:0;padding-right:0}}
+</style>
+<style>
+/* Keep the Services trigger and dropdown in one continuous hover area. */
+#loki-page .has-dropdown{position:relative}
+#loki-page .has-dropdown>.dropdown-menu{top:100%;left:0;margin:0;padding-top:22px;z-index:100;min-width:260px;max-width:calc(100vw - 32px)}
+#loki-page .has-dropdown>a{display:block}
+#loki-page .has-dropdown:hover>.dropdown-menu,#loki-page .has-dropdown:focus-within>.dropdown-menu{display:block}
+#loki-page .dropdown-menu li{margin:0}
+#loki-page .dropdown-menu li+li{margin-top:0}
+#loki-page .dropdown-menu a{display:block;padding:9px 0;line-height:1.45}
+</style>
+<style>
+/* Shared navigation dimensions; protect the logo from theme and flex sizing. */
+#loki-page nav>.wrap{display:flex;align-items:center;justify-content:space-between;gap:25px;min-height:94px;width:min(1320px,90%);padding:0;margin:0 auto}
+#loki-page nav .logo{display:flex;align-items:center;flex:0 0 108px;width:108px;min-width:108px;line-height:1;padding:0;margin:0}
+#loki-page nav .logo img.loki-logo-img{display:block;width:108px!important;height:auto!important;min-width:0;max-width:100%!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain;flex:none;margin:0;padding:0;border:0}
+#loki-page nav .navlinks{font-family:Manrope,Arial,sans-serif;font-size:14px;font-weight:500;line-height:1.5;gap:25px;align-items:center;list-style:none;margin:0;padding:0}
+#loki-page nav .navlinks>li{list-style:none;margin:0;padding:0;line-height:1.5}
+#loki-page nav .navlinks a{font-size:14px;line-height:1.5;letter-spacing:normal;text-transform:none;white-space:nowrap}
+#loki-page nav>.wrap>div{flex-shrink:0}
+#loki-page nav .navcta{flex-shrink:0;white-space:nowrap;font-family:Manrope,Arial,sans-serif;font-size:14px;font-weight:700;line-height:1.5;padding:14px 25px;border-radius:50px}
+#loki-page nav .dropdown-menu a{white-space:normal;padding:9px 0}
+@media(max-width:1100px){#loki-page nav>.wrap{gap:15px}#loki-page nav .navlinks{gap:14px}#loki-page nav .region-switch{display:none}}
+@media(max-width:900px){#loki-page nav>.wrap{min-height:76px}#loki-page nav .logo{flex-basis:85px;width:85px;min-width:85px}#loki-page nav .logo img.loki-logo-img{width:85px!important}#loki-page nav .menu-toggle{display:block;border:0;background:transparent;color:#cac9cf;margin-left:auto;padding:8px;font:500 14px/1.5 Manrope,Arial,sans-serif}#loki-page nav .navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:#14141f;padding:25px 5%;margin:0;align-items:start}#loki-page nav .navlinks.is-open{display:grid;gap:20px}#loki-page nav .navcta{padding:11px 16px}#loki-page nav .dropdown-menu{display:none!important}}
+</style>
+<style>
+/* Canonical LOKi navigation: identical on every service page. */
+#loki-page nav{--accent:#fb6a46;--ink:#cac9cf;--paper:#14141f;background:#14141ff2;color:#cac9cf}
+#loki-page nav .navcta,#loki-page nav .navcta:visited,#loki-page nav .navcta:hover,#loki-page nav .navcta:focus-visible{background:#fb6a46;color:#14141f;border:0}
+#loki-page nav .navlinks a,#loki-page nav .navlinks a:visited,#loki-page nav .navlinks a.active,#loki-page nav .navlinks a:hover,#loki-page nav .navlinks a:focus-visible{color:#cac9cf;opacity:1;border-bottom:0;text-decoration:none}
+#loki-page nav .dropdown-menu{background:#14141f;color:#cac9cf}
+#loki-page nav .dropdown-menu a:hover,#loki-page nav .dropdown-menu a:focus-visible{background:#ffffff09;color:#fff}
+#loki-page nav .region-switch,#loki-page nav .region-switch .on{color:#cac9cf}
+#loki-page nav a:focus-visible,#loki-page nav button:focus-visible{outline:2px solid #cac9cf;outline-offset:4px}
+</style>
+<style>
+#loki-page .hero h1{font-size:clamp(55px,9vw,125px);max-width:1100px;white-space:normal;overflow-wrap:normal}
+#loki-page .intro h2{max-width:none;font-size:clamp(35px,4.2vw,58px)}
+#loki-page .shopify-section{border-top:1px solid var(--line)}
+#loki-page .shopify-section>.wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:60px}
+#loki-page .shopify-section .partner-copy{grid-column:auto}
+@media(max-width:800px){#loki-page .hero h1{font-size:clamp(42px,10vw,76px)}#loki-page .shopify-section>.wrap{grid-template-columns:1fr;gap:20px}}
+
+
+/* Shared navigation dimensions; protect the logo from theme and flex sizing. */
+#loki-page nav>.wrap{display:flex;align-items:center;justify-content:space-between;gap:25px;min-height:94px;width:min(1320px,90%);padding:0;margin:0 auto}
+#loki-page nav .logo{display:flex;align-items:center;flex:0 0 108px;width:108px;min-width:108px;line-height:1;padding:0;margin:0}
+#loki-page nav .logo img.loki-logo-img{display:block;width:108px!important;height:auto!important;min-width:0;max-width:100%!important;max-height:none!important;aspect-ratio:auto!important;object-fit:contain;flex:none;margin:0;padding:0;border:0}
+#loki-page nav .navlinks{font-family:Manrope,Arial,sans-serif;font-size:14px;font-weight:500;line-height:1.5;gap:25px;align-items:center;list-style:none;margin:0;padding:0}
+#loki-page nav .navlinks>li{list-style:none;margin:0;padding:0;line-height:1.5}
+#loki-page nav .navlinks a{font-size:14px;line-height:1.5;letter-spacing:normal;text-transform:none;white-space:nowrap}
+#loki-page nav>.wrap>div{flex-shrink:0}
+#loki-page nav .navcta{flex-shrink:0;white-space:nowrap;font-family:Manrope,Arial,sans-serif;font-size:14px;font-weight:700;line-height:1.5;padding:14px 25px;border-radius:50px}
+#loki-page nav .dropdown-menu a{white-space:normal;padding:9px 0}
+@media(max-width:1100px){#loki-page nav>.wrap{gap:15px}#loki-page nav .navlinks{gap:14px}#loki-page nav .region-switch{display:none}}
+@media(max-width:900px){#loki-page nav>.wrap{min-height:76px}#loki-page nav .logo{flex-basis:85px;width:85px;min-width:85px}#loki-page nav .logo img.loki-logo-img{width:85px!important}#loki-page nav .menu-toggle{display:block;border:0;background:transparent;color:#cac9cf;margin-left:auto;padding:8px;font:500 14px/1.5 Manrope,Arial,sans-serif}#loki-page nav .navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:#14141f;padding:25px 5%;margin:0;align-items:start}#loki-page nav .navlinks.is-open{display:grid;gap:20px}#loki-page nav .navcta{padding:11px 16px}#loki-page nav .dropdown-menu{display:none!important}}
+
+/* Keep the Services trigger and dropdown in one continuous hover area. */
+#loki-page .has-dropdown{position:relative}
+#loki-page .has-dropdown>.dropdown-menu{top:100%;left:0;margin:0;padding-top:22px;z-index:100;min-width:260px;max-width:calc(100vw - 32px)}
+#loki-page .has-dropdown>a{display:block}
+#loki-page .has-dropdown:hover>.dropdown-menu,#loki-page .has-dropdown:focus-within>.dropdown-menu{display:block}
+#loki-page .dropdown-menu li{margin:0}
+#loki-page .dropdown-menu li+li{margin-top:0}
+#loki-page .dropdown-menu a{display:block;padding:9px 0;line-height:1.45}
+
+
+/* Canonical LOKi navigation: identical on every service page. */
+#loki-page nav{--accent:#fb6a46;--ink:#cac9cf;--paper:#14141f;background:#14141ff2;color:#cac9cf}
+#loki-page nav .navcta,#loki-page nav .navcta:visited,#loki-page nav .navcta:hover,#loki-page nav .navcta:focus-visible{background:#fb6a46;color:#14141f;border:0}
+#loki-page nav .navlinks a,#loki-page nav .navlinks a:visited,#loki-page nav .navlinks a.active,#loki-page nav .navlinks a:hover,#loki-page nav .navlinks a:focus-visible{color:#cac9cf;opacity:1;border-bottom:0;text-decoration:none}
+#loki-page nav .dropdown-menu{background:#14141f;color:#cac9cf}
+#loki-page nav .dropdown-menu a:hover,#loki-page nav .dropdown-menu a:focus-visible{background:#ffffff09;color:#fff}
+#loki-page nav .region-switch,#loki-page nav .region-switch .on{color:#cac9cf}
+#loki-page nav a:focus-visible,#loki-page nav button:focus-visible{outline:2px solid #cac9cf;outline-offset:4px}
+
+</style>
+<style>
+/* Consistent service-title arrow on every service page. */
+#loki-page .hero h1>span.service-title-arrow{display:inline-block;font-size:.65em;vertical-align:top;margin:12px 0 0 10px;line-height:1;animation:strategy-arrow 4s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){#loki-page .hero h1>span.service-title-arrow{animation:none}}
+</style>
+
+<style>
+/* Production service accent */
+#loki-page{
+  --accent:#fb6a46;
+}
+#loki-page .hero h1,
+#loki-page .service-eyebrow,
+#loki-page .cap-kicker,
+#loki-page .cap-box h3{
+  color:#fb6a46;
+}
+#loki-page .cap-box{
+  border-color:#fb6a4660;
+  background:#fb6a4605;
+}
+#loki-page .cap-box li{
+  border-color:#fb6a4660;
+  color:#fb6a46;
+}
+#loki-page .cap-box li:hover{
+  background:#fb6a46;
+  color:#14141f;
+}
+#loki-page .marquee-band,
+#loki-page .btn-primary{
+  background:#fb6a46;
+}
+#loki-page #work .case-more:hover,
+#loki-page #work .case-more:focus-visible{
+  border-color:#fb6a46;
+}
+#loki-page #work .case-more:hover .arrow,
+#loki-page #work .case-more:focus-visible .arrow{
+  background:#fb6a46;
+  color:#14141f;
+  border-color:#fb6a46;
+}
+#loki-page nav{
+  --accent:#fb6a46;
+}
+#loki-page nav .navcta,
+#loki-page nav .navcta:visited,
+#loki-page nav .navcta:hover,
+#loki-page nav .navcta:focus-visible{
+  background:#fb6a46;
+  color:#14141f;
+}
+</style>
+
+<div id="loki-page">
+<nav aria-label="Main navigation">
+  <div class="wrap">
+
+    <a class="logo" href="https://www.thisisloki.com/sg" target="_blank" rel="noopener noreferrer">
+      <img src="https://blog.thisisloki.com/wp-content/uploads/2026/09/Loki-logo.png" alt="LOKi" class="loki-logo-img">
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="strategy-nav">Menu +</button><ul class="navlinks" id="strategy-nav">
+
+      <li class="has-dropdown">
+        <a href="https://blog.thisisloki.com/services/" class="active">
+          Services
+        </a>
+
+        <ul class="dropdown-menu">
+          <li><a href="https://blog.thisisloki.com/services/strategy/">Strategy</a></li>
+          <li><a href="https://blog.thisisloki.com/services/creative/">Creative</a></li>
+          <li><a href="https://blog.thisisloki.com/services/social-media-content/">Social Media &amp; Content</a></li>
+          <li><a href="https://blog.thisisloki.com/services/production/">Production</a></li>
+          <li><a href="https://blog.thisisloki.com/services/development/">Development</a></li>
+          <li><a href="https://blog.thisisloki.com/services/performance-marketing/">Performance Marketing</a></li>
+          <li><a href="https://blog.thisisloki.com/services/analytics/">Analytics</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="https://www.thisisloki.com/sg/work" target="_blank" rel="noopener noreferrer">
+          Our Work
+        </a>
+      </li>
+
+      <li>
+        <a href="https://www.thisisloki.com/sg/about" target="_blank" rel="noopener noreferrer">
+          About
+        </a>
+      </li>
+
+      <li>
+        <a href="https://blog.thisisloki.com/">
+          Blog
+        </a>
+      </li>
+
+      <li>
+        <a href="https://www.thisisloki.com/sg/career" target="_blank" rel="noopener noreferrer">
+          Career
+        </a>
+      </li>
+
+      <li>
+        <a href="https://www.thisisloki.com/sg/internship" target="_blank" rel="noopener noreferrer">
+          Internship
+        </a>
+      </li>
+
+    </ul>
+
+    <div style="display:flex; align-items:center; gap:14px;">
+      <div class="region-switch">
+        <span>MY</span>
+        <span class="on">SG</span>
+      </div>
+
+      <a class="navcta" href="https://www.thisisloki.com/sg/contact">
+        Talk to Us
+      </a>
+    </div>
+
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge">Singapore · Malaysia</span>
+      <div class="service-eyebrow">04 / Production</div><h1>Production<span class="service-title-arrow" aria-hidden="true">↗</span></h1>
+      <div class="sub">
+        <p>From concept and storyboarding to shoot, edit and final delivery, LOKi manages video production and photography end to end. Our in-house team of creators, producers and editors works closely with our creative team, so the thinking behind the work carries through from the original idea to what eventually appears on screen.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://www.thisisloki.com/sg/contact">Talk to Us</a>
+        <a class="btn btn-secondary" href="https://www.thisisloki.com/sg/work">See Our Work →</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee-band" aria-label="Production capabilities">
+  <div class="marquee-track">
+    <div class="marquee-group">
+      <span>Creative campaign video production</span>
+      <span>Social media video and videography</span>
+      <span>Photography services</span>
+      <span>Event coverage and live streaming</span>
+      <span>Pre-production, production and post-production</span>
+      <span>Editing, motion graphics and content adaptation</span>
+      <span>Corporate video production</span>
+    </div>
+    <div class="marquee-group" aria-hidden="true">
+      <span>Creative campaign video production</span>
+      <span>Social media video and videography</span>
+      <span>Photography services</span>
+      <span>Event coverage and live streaming</span>
+      <span>Pre-production, production and post-production</span>
+      <span>Editing, motion graphics and content adaptation</span>
+      <span>Corporate video production</span>
+    </div>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="wrap">
+    <ul>
+      <li><strong>18 years</strong>Independent agency, founded 2008</li>
+      <li><strong>65+ specialists</strong>Across diverse disciplines in Singapore &amp; Malaysia</li>
+      <li><strong>Award‑Winning</strong>Recognised across Asia Pacific</li>
+      <li><strong>Across Industries</strong>Experienced in finance, retail, healthcare, aviation, government, tech platforms, consumer and B2B</li>
+    </ul>
+  </div>
+</div>
+
+<section class="intro">
+  <div class="wrap">
+    <p class="intro-lead">Production requirements can vary significantly depending on the market, platform, timeline and budget. Our presence across Singapore and Malaysia gives us greater flexibility in how we assemble a production, allowing us to find the right balance between ambition, production value and budget while maintaining creative oversight throughout.</p>
+
+    <h2>Your Production Partner</h2>
+
+    <div class="partner-copy">
+      <p>Our production capabilities span corporate video production, social media videography, campaign films, photography, event coverage and live streaming. We can scale the production approach according to the brief, whether that means a lean social shoot, an ongoing content production model or a larger campaign involving talent, locations and multiple deliverables.</p>
+
+      <p>With teams and production networks across Singapore and Kuala Lumpur, we also manage cross-border productions for brands operating across both markets. From crew and talent coordination to locations, schedules and on-ground logistics, LOKi takes ownership of the production process so clients can work through one team across markets.</p>
+    </div>
+
+    <div class="cap-box">
+      <div class="cap-kicker">04</div>
+      <h3>Video Production &amp; Photography</h3>
+      <ul>
+        <li>Creative campaign video production</li>
+        <li>Social media video and videography</li>
+        <li>Photography services</li>
+        <li>Event coverage and live streaming</li>
+        <li>Pre-production, production and post-production</li>
+        <li>Editing, motion graphics and content adaptation</li>
+        <li>Corporate video production</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+    <div class="wrap">
+      <div class="work-heading section-head">
+        <h2>See Our Work In Action</h2>
+        <span class="sec-num">Selected Case Studies</span>
+      </div>
+      <div class="case-scroll" id="caseScroll" tabindex="0" role="region" aria-label="Selected case studies">
+        <a class="case-card" href="https://blog.thisisloki.com/case-study-sg-singapore-alliance-for-responsible-drinking/">
+          <img loading="lazy" src="https://s3.ap-southeast-1.amazonaws.com/thisisloki.com-v3/case_study_assets_25/sg-sard/header.webp" alt="Singapore Alliance for Responsible Drinking">
+          <div class="case-copy"><div class="brand">Singapore Alliance for Responsible Drinking</div><h4>How Much Is Too Much?</h4></div>
+        </a>
+        <a class="case-card" href="https://blog.thisisloki.com/case-study-sg-delonghi/">
+          <img loading="lazy" src="https://s3.ap-southeast-1.amazonaws.com/thisisloki.com-v3/case_study_assets_25/sg-delonghi/header.webp" alt="De'Longhi">
+          <div class="case-copy"><div class="brand">De'Longhi</div><h4>Dedicated To Me</h4></div>
+        </a>
+        <a class="case-card" href="https://blog.thisisloki.com/case-study-sg-hoka/">
+          <img loading="lazy" src="https://s3.ap-southeast-1.amazonaws.com/thisisloki.com-v3/case_study_assets_25/sg-hoka/hoka_birdseye.webp" alt="HOKA">
+          <div class="case-copy"><div class="brand">HOKA</div><h4>Born To Fly</h4></div>
+        </a>
+        <a class="case-more" href="https://www.thisisloki.com/sg/work">
+          <span>View All<br>Our Work</span>
+          <div class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"></path></svg></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="section-head"><h2>Got a question?</h2></div>
+
+    <div style="max-width:78ch;">
+      <details open="">
+        <summary>What types of content can you produce?</summary>
+        <p>We produce photography, social content, campaign videos, interviews, corporate videos, event coverage, product shoots and short-form content across digital and social platforms.</p>
+      </details>
+
+      <details>
+        <summary>Do you have an in-house production team?</summary>
+        <p>Yes. We have production capabilities across Singapore and Kuala Lumpur, supported by our wider network when a project requires additional crew, talent or specialist expertise.</p>
+      </details>
+
+      <details>
+        <summary>Can you shoot at our office or on location?</summary>
+        <p>Yes. We can shoot in-studio, at your office, retail space, event venue or other locations depending on the creative and production requirements.</p>
+      </details>
+
+      <details>
+        <summary>Can you handle the entire production process?</summary>
+        <p>Yes. We can manage the process from creative development and pre-production through filming, photography, editing, motion graphics and final delivery.</p>
+      </details>
+
+      <details>
+        <summary>Can you produce content across Singapore and Malaysia?</summary>
+        <p>Yes. With teams in Singapore and Kuala Lumpur, we can coordinate cross-border productions and regional content requirements.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="explore">
+  <div class="wrap">
+    <div class="section-head"><h2>Explore Other Services</h2></div>
+
+    <div class="explore-list">
+
+      <a class="explore-row" style="--row-color:#ff8928" href="https://blog.thisisloki.com/services/strategy/">
+        <span class="n">01</span>
+        <div>
+          <h4>Strategy</h4>
+          <p>Strategy that connects your business goals to creative, content, channels and media.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="explore-row" style="--row-color:#cc66ff" href="https://blog.thisisloki.com/services/creative/">
+        <span class="n">02</span>
+        <div>
+          <h4>Creative</h4>
+          <p>Ideas and creative that bring your brand to life across every touchpoint.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="explore-row" style="--row-color:#84ff90" href="https://blog.thisisloki.com/services/social-media-content/">
+        <span class="n">03</span>
+        <div>
+          <h4>Social Media &amp; Content</h4>
+          <p>Social strategy and content designed around your brand, audience and platforms.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="explore-row" style="--row-color:#56cbf0" href="https://blog.thisisloki.com/services/development/">
+        <span class="n">05</span>
+        <div>
+          <h4>Development</h4>
+          <p>Websites, e-commerce, applications and digital platforms built around your business needs.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="explore-row" style="--row-color:#f9de2f" href="https://blog.thisisloki.com/services/performance-marketing/">
+        <span class="n">06</span>
+        <div>
+          <h4>Performance Marketing</h4>
+          <p>Paid media campaigns planned and optimised for measurable results.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="explore-row" style="--row-color:#9999ff" href="https://blog.thisisloki.com/services/analytics/">
+        <span class="n">07</span>
+        <div>
+          <h4>Analytics</h4>
+          <p>Turning your marketing and customer data into insights you can actually act on.</p>
+        </div>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="closing">
+    <h2>Have a brief, a challenge or just the start of an idea?</h2>
+    <p>Let's build something that gets your business found, trusted and chosen. Tell us what you're working on, where you need support, or what you're trying to solve. We'll help you figure out what comes next.</p>
+    <a class="btn btn-primary" href="https://www.thisisloki.com/sg/contact">Talk to Us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© LOKi Digital Creative Agency</div>
+</footer>
+</div>
+<script>(function(){function init(){const root=document.getElementById('loki-page');if(!root||root.dataset.strategyReady)return;root.dataset.strategyReady='true';const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;const menu=root.querySelector('.menu-toggle'),nav=root.querySelector('.navlinks');menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));nav.classList.toggle('is-open',open);menu.textContent=open?'Close −':'Menu +'});if(reduced||!('IntersectionObserver' in window))return;const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.remove('pre');io.unobserve(e.target)}}),{threshold:.08});root.querySelectorAll('.trust li,.intro-lead,.intro h2,.partner-copy,.cap-box,.section-head,.portfolio-item,.case-scroll,.faq details,.explore-card,.explore-row,.closing').forEach(el=>{el.classList.add('strategy-reveal');if(el.getBoundingClientRect().top>innerHeight*.92){el.classList.add('pre');io.observe(el)}})}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init()})();
+</script>
